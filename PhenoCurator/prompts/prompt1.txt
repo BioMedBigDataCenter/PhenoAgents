@@ -1,0 +1,35 @@
+[FIRST_BATCH]
+1. Examples of problematic values:
+  - A body weight value of "-50" is physically impossible (negative for a non-negative variable) → `anomalous_values`
+  - A numeric blood pressure value "130mmHg" has text appended to a number → `anomalous_values`
+2. Detect ALL problematic values by checking these categories:
+  (a) IMPOSSIBLE VALUES: negative numbers for non-negative variables, zero where zero is invalid, values far beyond physiological limits. → `anomalous_values`
+  (b) MISSING / INVALID MARKERS: values that represent absence of data rather than actual measurements, including standard missing codes, system-generated error flags, common placeholder numbers, or entries consisting entirely of special characters or punctuation. → `na_values`
+  (c) GIBBERISH: random keyboard strings or symbol-only entries. → `anomalous_values`
+  (d) FORMAT ERRORS: numbers mixed with text or units. → `anomalous_values`
+  (e) UNIT MISMATCH: numeric values that appear to use a different unit than expected by the metadata (e.g., weight recorded in grams when kg is expected, glucose in mg/dL when mmol/L is expected). → `anomalous_values`
+  (f) RANGE ARTIFACTS / LOD: instrument or system artifacts such as "<0.001", ">1000", "BLQ", "LOD", "OVER", "HI", or repeated floor/ceiling codes when they are not valid measurements. → `anomalous_values`
+  (g) OFF-ONTOLOGY ENUM: categorical values outside the valid options that cannot be confidently normalized to an allowed category, including free-text answers, ambiguous variants, or multi-option responses. → `anomalous_values`
+  (h) DOMAIN MISMATCH: values whose format may be valid but whose meaning is nonsensical for this variable according to metadata or common biomedical constraints. → `anomalous_values`
+Flag values as `na_values` or `anomalous_values` only when there is clear evidence that they are missing-data markers, invalid entries, formatting errors, impossible values, or values inconsistent with the variable metadata. Do NOT flag values that are merely unusual but plausible, such as extremely tall height or unusually high blood pressure, unless they violate explicit metadata/range/unit constraints or are physiologically impossible. If a value is suspicious but not confirmably erroneous, mention the concern in the explanation field but do NOT add it to `anomalous_values`.
+3. ALWAYS respond with one single code block of json of the requested format only.
+
+[SUBSEQUENT_BATCH]
+1. When updating `na_values` and `anomalous_values`, you may add or remove values. Remove values from previous batches that you now realize are actually valid. Keep values that are clearly problematic.
+2. If there is no explicit information in the description and metadata indicating that the data has a specified minimal value and specified maximal value, mark these two values as "not applicable".
+3. Detect ALL problematic values in this batch:
+  - Impossible values (negative, zero where invalid, far beyond limits) → `anomalous_values`
+  - Missing/invalid markers (missing codes, error flags, placeholders, bare symbols) → `na_values`
+  - Gibberish (random strings, symbol-only) → `anomalous_values`
+  - Format errors (numbers mixed with text/units) → `anomalous_values`
+  - Unit mismatch (different unit than expected) → `anomalous_values`
+  - Range artifacts / LOD ("<0.001", ">1000", "BLQ", "LOD", "OVER", "HI") → `anomalous_values`
+  - Off-ontology enum (categorical values outside valid options) → `anomalous_values`
+  - Domain mismatch (valid format but nonsensical meaning) → `anomalous_values`
+Flag values as `na_values` or `anomalous_values` only when there is clear evidence that they are missing-data markers, invalid entries, formatting errors, impossible values, or values inconsistent with the variable metadata. Do NOT flag values that are merely unusual but plausible, unless they violate explicit metadata/range/unit constraints or are physiologically impossible. If a value is suspicious but not confirmably erroneous, mention the concern in the explanation field but do NOT add it to `anomalous_values`.
+4. If any modifications are made to the fields in `result`, update the explanation accordingly.
+5. Ensure that all flagged values actually appear in the provided data.
+6. ALWAYS respond with one single code block of json of the requested format only.
+7. NA_variable refers to a dataset where all the values are missing (NA).
+8. ZERO_variable refers to a dataset where all the values are zero.
+9. Duplicate_variable refers to a situation where all values in the entire dataset are identical except for missing values (NA).

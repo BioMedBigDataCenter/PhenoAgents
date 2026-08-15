@@ -1,0 +1,115 @@
+﻿Dataid,Term
+ALQ100,Had at least 12 alcohol drinks/1 yr?
+ALQ120Q,How often drink alcohol over past 12 mos
+ALQ130,Avg # alcoholic drinks/day -past 12 mos
+ALQ140Q,#days have 5 or more drinks/past 12 mos
+ALQ150,Ever have 5 or more drinks every day?
+AUQ130,General condition of hearing
+AUQ140,When was hearing last tested
+AUQ200,"How often ringing, roaring, buzzing"
+AUQ240,Use ear protection around loud noise
+AUXTWIDR,"Tympanometric width, right ear"
+BIDCM,Cell membrane capacitance (nF)
+BIDECF,Estimated extracellular fluid volume (L)
+BIDFAT,Estimated fat mass (kg)
+BIDFFM,Estimated fat-free mass (kg)
+BIDICF,Estimated intracellular fluid volume (L)
+BIDPFAT,Estimated percent body fat
+BIDRECF,Resistance (ohms) of extracellular fluid
+BIDRICF,Resistance (ohms) of intracellular fluid
+BIDTBW,Estimated total water body volume (L)
+BMISUB,Subscapular Skinfold Comment
+BMXARMC,Arm Circumference (cm)
+BMXARML,Upper Arm Length (cm)
+BMXBMI,Body Mass Index (kg/m**2)
+BMXCALF,Maximal Calf Circumference (cm)
+BMXLEG,Upper Leg Length (cm)
+BMXTHICR,Thigh Circumference (cm)
+BMXTRI,Triceps Skinfold (mm)
+BMXWAIST,Waist Circumference (cm)
+BPQ010,Last blood pressure reading by doctor
+BPQ070,When blood cholesterol last checked
+BPQ090D,Told to take prescriptn for cholesterol
+BPXDAR,DBP average reported to examinee
+BPXPTY,Pulse type:
+BPXSY1,Systolic: Blood pres (1st rdg) mm Hg
+DIQ010,Doctor told you have diabetes
+DIQ060Q,Number of mos/yrs taking insulin
+DMDEDUC2,Education Level - Adults 20+
+DMDMARTL,Marital Status
+HSQ580,How long ago was last blood donation?
+INDHHINC,Annual Household Income
+LBDFSHSI,Follicle stimulating hormone (IU/L)
+LBDLDL,LDL-cholesterol (mg/dL)
+LBDSBUSI,Blood urea nitrogen (mmol/L)
+LBDSCHSI,"Cholesterol, total (mmol/L)"
+LBDSGLSI,Glucose (mmol/L)
+LBDSTBSI,"Bilirubin, total (umol/L)"
+LBDSTRSI,Triglycerides (mmol/L)
+LBDSUASI,Uric acid (umol/L)
+LBXB12,"Vitamin B12, serum (pg/mL)"
+LBXBAP,Bone alkaline phosphotase (ug/L)
+LBXBAPCT,Basophils percent (%)
+LBXCOT,Cotinine (ng/mL)
+LBXCPSI,C-peptide: SI(nmol/L)
+LBXCRP,C-reactive protein(mg/dL)
+LBXD07,"1,2,3,4,6,7,8,9-ocdd (fg/g)"
+LBXEOPCT,Eosinophils percent (%)
+LBXEPP,Protoporphyrin (ug/dL RBC)
+LBXFER,Ferritin (ng/mL)
+LBXFOL,"Folate, serum (ng/mL)"
+LBXGH,Glycohemoglobin(%)
+LBXGLUSI,Plasma glucose: SI(mmol/L)
+LBXGTC,Gamma tocopherol (ug/dL)
+LBXIN,Insulin (uU/mL)
+LBXLH,Luteinizing hormone (mIU/mL)
+LBXMOPCT,Monocyte percent (%)
+LBXPCT,Transferrin saturation (%)
+LBXRBF,"Folate, RBC (ng/mL RBC)"
+LBXRDW,Red cell distribution width (%)
+LBXSAPSI,Alkaline phosphotase (U/L)
+LBXSASSI,AST (U/L)
+LBXSATSI,ALT (U/L)
+LBXSCR,Creatinine (mg/dL)
+LBXSGTSI,GGT (U/L)
+LBXTC,Total cholesterol (mg/dL)
+LBXTIB,TIBC (ug/dL)
+LBXTR,Triglyceride (mg/dL)
+LBXTSH,Thyroid stim hormone (TSH) (uIU/mL)
+LBXVIA,Vitamin A (ug/dL)
+LBXVIE,Vitamin E (ug/dL)
+LBXVME,Blood MTBE (pg/ml)
+OHX23TC,Tooth Count: #23
+PAD020,Walked or bicycled over past 30 days
+PAD200,Vigorous activity over past 30 days
+PAD320,Moderate activity over past 30 days
+PAQ050Q,# times walked or bicycled
+PAQ100,Tasks around home/yard past 30 days
+PAQ180,Avg level of physical activity each day
+PAQ480,"Daily hours of TV, video or computer use"
+PAQ500,Activity comparison last mo - last yr
+PAQ520,Compare activity w/others same age
+PAQ540,Compare activity with 10 years ago
+PHAFSTHR,"Total length of ""food fast,"" hours"
+SSAMH,Anti-Mullerian Hormone (ng/ml)
+SSCYPC,Cystatin C (mg/L)
+SSGALBP,Percent glycated albumin%
+SSTESTO,Testostosterone (ng/mL)
+SSTFR,Serum transferrin receptor (mg/l)
+SSTNIA,"Cardiac hs-Troponin I (Abbott), ng/L"
+SSUCTVL,Cytomegalovirus viral load Copies/mL
+URDUCD,"Cadmium, urine (ng/mL)"
+URXDAZ,Daidzein (ng/mL)
+URXETL,Enterolactone (ng/mL)
+URXGNS,Genistein (ng/mL)
+URXNT,N-telopeptides (NTx) (nmol BCE)
+URXOP3,Dimethylthiophosphate (ug/L)
+URXUCO,"Cobalt, urine (ng/mL)"
+URXUCRSI,"Creatinine, urine (umol/L)"
+URXUMASI,"Albumin, urine (mg/L) SI"
+URXUPT,"Platinum, urine (ng/mL)"
+WHD040,"Like to weigh more, less or same"
+WHD050,Self-reported weight-1 yr ago (pounds)
+WHD130,Self-reported height - age 25 (inches)
+WHD150,Age when heaviest weight
+WHQ030,How do you consider your weight
