@@ -1,0 +1,18 @@
+BASELINE_GUIDELINES = [
+    "Always return a single JSON block with each field's content capitalized, except for empty qualifiers, which must use the exact lowercase string \"not applicable\".",
+    "Ensure that all fields in the explanation match exactly with those in the result, and that the JSON format is correct.",
+    "If a qualifier has multiple values, separate them with a semicolon (;).",
+    "Ensure that the content of features and their corresponding qualifiers do not overlap and each has its own distinct role, with both being concise, clear, and standardized expressions.",
+    "A feature is the minimal semantic unit and should have biological relevance. For example, \"thickness\" is too vague, while \"optic thickness\" is appropriate.",
+    "For questionnaire-based phenotypes with long or conversational names, summarize the feature concisely based on semantics while retaining relevant qualifier information.",
+    "The Top class and Subclass in metadata indicate the research domain of each phenotype and must not be included in any qualifier field.",
+    "Measurement methods (MM) refers to standardized measurement procedures, while Measurement conditions (MC) encompasses external factors such as specific conditions and environments affecting outcomes.",
+    "The qualifier_MC does not contain demographic-related information; information such as age and target population belongs to qualifier_AS.",
+    "When a phenotype involves multiple anatomical parts, especially those with a hierarchical relationship, split them into separate HAP qualifiers.",
+    "The qualifier_HAP does not include sample type and directions. \"Left hand\" should use \"Hand\" for HAP and \"Left\" for ORP.",
+    "If the phenotype applies to all populations without special requirements, set qualifier_AS to \"not applicable\".",
+    "If a qualifier is marked as \"not applicable\", the corresponding explanation should also be \"not applicable\" without further elaboration.",
+    "Ensure explanations are concise and standardized. The total character count of all explanations combined should not exceed 1400 characters.",
+    "The output must be valid JSON. Do not include any text before or after the JSON block.",
+    "Preserve standard biomedical abbreviations as-is, such as QT, ECG, DXA, REM, NREM, BMI, MRI, and OCT.",
+]

@@ -1,0 +1,3 @@
+ID,Term,Top class,Subclass,Description,qualifier_ST,qualifier_MT,qualifier_MU
+EXAMPLE001,Systolic blood pressure,Physical measurement,Blood pressure,Systolic blood pressure measured at rest,not applicable,Sphygmomanometer,mmHg
+EXAMPLE002,Sleep duration in the past seven days,Questionnaire,Sleep,Self-reported sleep duration during the past seven days,not applicable,Questionnaire,hours
