@@ -1,0 +1,389 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PhenoDE JSON Schema",
+  "description": "Machine-verifiable representation of a PhenoDE record, including the Phenotype Assembly Method Feature-Qualifier decomposition and optional value-domain specification for enumerated variables.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ID",
+    "Schema version",
+    "Platform",
+    "Detection item",
+    "Term",
+    "Description",
+    "Data type",
+    "Variable IDs",
+    "Phenotype Assembly Method representation"
+  ],
+  "properties": {
+    "ID": {
+      "type": "string",
+      "pattern": "^PDE[0-9]+\\.[0-9]+$",
+      "description": "Stable PhenoDE identifier with the record version suffix."
+    },
+    "Schema version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Version of the normative PhenoDE JSON Schema used for validation and exchange."
+    },
+    "Platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Detection item": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Term": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Data type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Value domain": {
+      "$ref": "#/$defs/ValueDomain",
+      "description": "Optional data-element-level specification of permissible values for enumerated variables."
+    },
+    "Abbreviation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "Variable IDs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^PDV[0-9]+\\.[0-9]+_[0-9]+$"
+      }
+    },
+    "Phenotype Assembly Method representation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Feature",
+        "Qualifiers"
+      ],
+      "properties": {
+        "Feature": {
+          "$ref": "#/$defs/Feature"
+        },
+        "Qualifiers": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/Qualifier"
+          },
+          "description": "One or more Qualifier objects. Individual Qualifier classifications may repeat. For ex vivo records, at least one ST Qualifier is required."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "Phenotype Assembly Method representation": {
+            "properties": {
+              "Feature": {
+                "properties": {
+                  "Feature classification": {
+                    "const": "Ex vivo measurement"
+                  }
+                },
+                "required": [
+                  "Feature classification"
+                ]
+              }
+            },
+            "required": [
+              "Feature"
+            ]
+          }
+        },
+        "required": [
+          "Phenotype Assembly Method representation"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Phenotype Assembly Method representation": {
+            "properties": {
+              "Qualifiers": {
+                "contains": {
+                  "properties": {
+                    "Qualifier classification": {
+                      "const": "ST"
+                    }
+                  },
+                  "required": [
+                    "Qualifier classification"
+                  ]
+                },
+                "minContains": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "Value domain"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Data type": {
+            "const": "Enum type"
+          }
+        },
+        "required": [
+          "Data type"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "Feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Feature ID",
+        "Feature classification",
+        "Feature term",
+        "External mappings"
+      ],
+      "properties": {
+        "Feature ID": {
+          "type": "string",
+          "pattern": "^(FI|FE|FQ)[0-9]+$",
+          "description": "Controlled Feature identifier; prefixes may indicate measurement category, such as FI, FE, or FQ."
+        },
+        "Feature classification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Feature term": {
+          "type": "string",
+          "minLength": 1
+        },
+        "External mappings": {
+          "$ref": "#/$defs/ExternalMappings"
+        }
+      }
+    },
+    "Qualifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Qualifier ID",
+        "Qualifier classification",
+        "Qualifier term",
+        "External mappings"
+      ],
+      "properties": {
+        "Qualifier ID": {
+          "type": "string",
+          "pattern": "^[A-Z]+[0-9]+$"
+        },
+        "Qualifier classification": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Qualifier term": {
+          "type": "string",
+          "minLength": 1
+        },
+        "External mappings": {
+          "$ref": "#/$defs/ExternalMappings"
+        }
+      }
+    },
+    "ExternalMappings": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/$defs/ExternalMapping"
+      },
+      "description": "Zero or more external mapping objects. An empty array indicates that no external mapping object is currently recorded; for MT Qualifiers, this may reflect exclusion from the present mapping evaluation."
+    },
+    "ExternalMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Mapping result"
+      ],
+      "properties": {
+        "Mapping result": {
+          "type": "string",
+          "enum": [
+            "Exact",
+            "Partial",
+            "Unique"
+          ]
+        },
+        "Source Name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Source Type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "External Link or ID": {
+          "type": "string",
+          "minLength": 1
+        },
+        "UI links": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "Mapping result": {
+                "enum": [
+                  "Exact",
+                  "Partial"
+                ]
+              }
+            },
+            "required": [
+              "Mapping result"
+            ]
+          },
+          "then": {
+            "required": [
+              "Source Name",
+              "Source Type",
+              "External Link or ID"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "Mapping result": {
+                "const": "Unique"
+              }
+            },
+            "required": [
+              "Mapping result"
+            ]
+          },
+          "then": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "Source Name"
+                  ]
+                },
+                {
+                  "required": [
+                    "Source Type"
+                  ]
+                },
+                {
+                  "required": [
+                    "External Link or ID"
+                  ]
+                },
+                {
+                  "required": [
+                    "UI links"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ValueDomain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Value domain type",
+        "Permissible values"
+      ],
+      "properties": {
+        "Value domain type": {
+          "type": "string",
+          "enum": [
+            "Enumerated"
+          ],
+          "description": "Type of value-domain specification."
+        },
+        "Permissible values": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/PermissibleValue"
+          }
+        },
+        "Coding information": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Coding notes or interpretation rules for the permissible values."
+        },
+        "Source/provenance": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Source or provenance of the value-domain specification."
+        }
+      }
+    },
+    "PermissibleValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Code",
+        "Label"
+      ],
+      "properties": {
+        "Code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "Definition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Ordinal position": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

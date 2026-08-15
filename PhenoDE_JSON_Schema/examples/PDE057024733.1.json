@@ -1,0 +1,159 @@
+{
+  "ID": "PDE057024733.1",
+  "Schema version": "1.0.0",
+  "Platform": "Sensory",
+  "Detection item": "Ophthalmic optical coherence tomography scanner",
+  "Term": "Left ganglion cell layer with inner plexiform layer and retinal nerve fiber layer superior nasal thickness of 12 equal parts of ring of optic disc",
+  "Description": "Measurement of superior nasal thickness of ganglion cell layer with inner plexiform layer and retinal nerve fiber layer divided into 12 equal parts within the ring surrounding left optic disc.",
+  "Data type": "Numeric type",
+  "Abbreviation": "(L) GCL++ 12_SN",
+  "Variable IDs": [
+    "PDV057024733.1_00100"
+  ],
+  "Phenotype Assembly Method representation": {
+    "Feature": {
+      "Feature ID": "FI0597",
+      "Feature classification": "In vivo measurement",
+      "Feature term": "Optic disc layer thickness",
+      "External mappings": [
+        {
+          "Mapping result": "Partial",
+          "Source Name": "FMA",
+          "Source Type": "Ontology",
+          "External Link or ID": "http://purl.org/sig/ont/fma/fma58634",
+          "UI links": null
+        }
+      ]
+    },
+    "Qualifiers": [
+      {
+        "Qualifier ID": "HAP166",
+        "Qualifier classification": "HAP",
+        "Qualifier term": "Ganglion cell layer",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "NCIT",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C32652",
+            "UI links": "http://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C32652"
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "HAP167",
+        "Qualifier classification": "HAP",
+        "Qualifier term": "Inner plexiform layer",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "NCIT",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C32809",
+            "UI links": "http://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C32809"
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "HAP170",
+        "Qualifier classification": "HAP",
+        "Qualifier term": "Optic disc",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "FMA",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://purl.org/sig/ont/fma/fma58634",
+            "UI links": null
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "HAP175",
+        "Qualifier classification": "HAP",
+        "Qualifier term": "Retinal nerve fiber layer",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "IOBC",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://purl.jp/bio/4/id/200906052168673465",
+            "UI links": null
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "MM013",
+        "Qualifier classification": "MM",
+        "Qualifier term": "12 equal parts of ring",
+        "External mappings": [
+          {
+            "Mapping result": "Unique"
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "MT062",
+        "Qualifier classification": "MT",
+        "Qualifier term": "Optical coherence tomography for ophthalmology",
+        "External mappings": []
+      },
+      {
+        "Qualifier ID": "MU063",
+        "Qualifier classification": "MU",
+        "Qualifier term": "μm",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "UO",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://purl.obolibrary.org/obo/UO_0000017",
+            "UI links": null
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "ORP05",
+        "Qualifier classification": "ORP",
+        "Qualifier term": "Left",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "SNOMEDCT",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://purl.bioontology.org/ontology/SNOMEDCT/7771000",
+            "UI links": null
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "ORP20",
+        "Qualifier classification": "ORP",
+        "Qualifier term": "Nasal",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "NCIT",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C27958",
+            "UI links": "http://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C27958"
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "ORP22",
+        "Qualifier classification": "ORP",
+        "Qualifier term": "Superior",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "NCIT",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25235",
+            "UI links": "http://bioportal.bioontology.org/ontologies/NCIT?p=classes&conceptid=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C25235"
+          }
+        ]
+      }
+    ]
+  }
+}

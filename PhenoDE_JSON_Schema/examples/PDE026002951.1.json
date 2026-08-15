@@ -1,0 +1,68 @@
+{
+  "ID": "PDE026002951.1",
+  "Schema version": "1.0.0",
+  "Platform": "Health questionnaire",
+  "Detection item": "Health Questionnaire-2",
+  "Term": "Preference for sweetness",
+  "Description": "Sweetness preference.",
+  "Data type": "Enum type",
+  "Abbreviation": null,
+  "Value domain": {
+    "Value domain type": "Enumerated",
+    "Permissible values": [
+      {
+        "Code": "1",
+        "Label": "Mild",
+        "Definition": "Mild preference for sweetness.",
+        "Ordinal position": 1
+      },
+      {
+        "Code": "2",
+        "Label": "Moderate",
+        "Definition": "Moderate preference for sweetness.",
+        "Ordinal position": 2
+      },
+      {
+        "Code": "3",
+        "Label": "Strong",
+        "Definition": "Strong preference for sweetness.",
+        "Ordinal position": 3
+      },
+      {
+        "Code": "0",
+        "Label": "Unknown",
+        "Definition": "Response option indicating unknown or unavailable preference status.",
+        "Ordinal position": null
+      }
+    ],
+    "Coding information": "Numeric coding: 0 = Unknown, 1 = Mild, 2 = Moderate, and 3 = Strong. Mild, Moderate, and Strong are ordered categories of increasing sweetness preference; Unknown is retained as a non-ordered response option and should not be interpreted as an ordinal level.",
+    "Source/provenance": "Author-supplied PhenoDE detail and coding information for PDE026002951.1."
+  },
+  "Variable IDs": [
+    "PDV026002951.1_00100"
+  ],
+  "Phenotype Assembly Method representation": {
+    "Feature": {
+      "Feature ID": "FQ0387",
+      "Feature classification": "Questionnaire measurement",
+      "Feature term": "Preference for sweetness",
+      "External mappings": [
+        {
+          "Mapping result": "Partial",
+          "Source Name": "CHNS",
+          "Source Type": "Dataset",
+          "External Link or ID": "Questionnaire of CHNS (https://chns.cpc.unc.edu/data/questionnaires/)",
+          "UI links": null
+        }
+      ]
+    },
+    "Qualifiers": [
+      {
+        "Qualifier ID": "MT024",
+        "Qualifier classification": "MT",
+        "Qualifier term": "Dietary habits",
+        "External mappings": []
+      }
+    ]
+  }
+}

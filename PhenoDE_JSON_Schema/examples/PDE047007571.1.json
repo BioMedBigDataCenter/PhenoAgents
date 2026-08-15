@@ -1,0 +1,65 @@
+{
+  "ID": "PDE047007571.1",
+  "Schema version": "1.0.0",
+  "Platform": "Plasma metabolic factors and cytokines",
+  "Detection item": "Biochemical analysis",
+  "Term": "IFN-γ",
+  "Description": "IFN-γ, or type II interferon, is a cytokine that is critical for innate and adaptive immunity against viral, some bacterial, and protozoan infections. Aberrant IFN-γ expression is associated with a number of autoinflammatory and autoimmune diseases.",
+  "Data type": "Numeric type",
+  "Abbreviation": null,
+  "Variable IDs": [
+    "PDV047007571.1_00100"
+  ],
+  "Phenotype Assembly Method representation": {
+    "Feature": {
+      "Feature ID": "FE004362",
+      "Feature classification": "Ex vivo measurement",
+      "Feature term": "IFN-γ",
+      "External mappings": [
+        {
+          "Mapping result": "Exact",
+          "Source Name": "IOBC",
+          "Source Type": "Ontology",
+          "External Link or ID": "http://purl.jp/bio/4/id/200906010587954054",
+          "UI links": null
+        }
+      ]
+    },
+    "Qualifiers": [
+      {
+        "Qualifier ID": "MT049",
+        "Qualifier classification": "MT",
+        "Qualifier term": "Meso QuickPlex SQ120",
+        "External mappings": []
+      },
+      {
+        "Qualifier ID": "MU008",
+        "Qualifier classification": "MU",
+        "Qualifier term": "pg/mL",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "SNOMEDCT",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://purl.bioontology.org/ontology/SNOMEDCT/258808001",
+            "UI links": null
+          }
+        ]
+      },
+      {
+        "Qualifier ID": "ST02",
+        "Qualifier classification": "ST",
+        "Qualifier term": "Plasma",
+        "External mappings": [
+          {
+            "Mapping result": "Exact",
+            "Source Name": "MESH",
+            "Source Type": "Ontology",
+            "External Link or ID": "http://purl.bioontology.org/ontology/MESH/D010949",
+            "UI links": null
+          }
+        ]
+      }
+    ]
+  }
+}
